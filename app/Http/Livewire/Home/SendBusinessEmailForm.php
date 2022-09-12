@@ -18,7 +18,7 @@ class SendBusinessEmailForm extends Component
     protected $rules = [
         'name' => 'required|min:2',
         'email' => 'required|email',
-        'telephone' => 'required|numeric|digits:10',
+//        'telephone' => 'required|numeric|digits:10',
         'comp_name' => 'required',
         'target_segment' => 'required',
     ];
