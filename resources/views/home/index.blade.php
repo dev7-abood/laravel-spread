@@ -2,58 +2,17 @@
 <html lang="ar">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>
-        مقيم
-    </title>
-    <meta content="" name="description">
-
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="/assets/img/favicon.ico" rel="icon">
-    <link href="/assets/img/favicon.ico" rel="apple-touch-icon">
-
-    <!-- CSS Files -->
-    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="/assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WJVHMN8');</script>
-
-    @livewireStyles
+    @include('home.layouts.head')
 </head>
 
 <body>
 
-<header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-        <a href="index.html" class="logo d-flex align-items-center">
-            <img src="/assets/img/logo-transparent.png" alt="">
-
-        </a>
-
-        <nav id="navbar" class="navbar">
-            <ul>
-                <li><a class="nav-link scrollto" href="#pricing">اسعار الشرائح</a></li>
-                <li><a class="nav-link scrollto" href="#features">الخدمات</a></li>
-                <li><a class="nav-link scrollto" href="#values">المميزات</a></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-
-    </div>
-</header>
+@include('home.layouts.header')
 
 <!-- ======= Hero Section ======= -->
+
+
+
 <section id="hero" class="hero d-flex align-items-center">
     <div class="container">
         <div class="row">
@@ -62,7 +21,8 @@
                     احصل على خدمة مقيم لمنشأتك
                 </h1>
                 <div class="intro-form" data-aos="fade-up" data-aos-delay="500">
-                    @livewire('home.send-business-email-form')
+{{--                    @livewire('home.send-business-email-form')--}}
+                    @include('home.form-send-mail.create')
                 </div>
             </div>
             <div class="col-lg-6 hero-img mt-5" data-aos="zoom-out" data-aos-delay="200">
@@ -123,7 +83,8 @@
 
             <header class="section-header">
                 <p>
-                    تمكنك بوابة مقيم الإلكترونية ربط منشأتك إلكترونياً بالمديرية العامة للجوازات وتسهل عليك عمليات الجوازات من
+                    تمكنك بوابة مقيم الإلكترونية ربط منشأتك إلكترونياً بالمديرية العامة للجوازات وتسهل عليك عمليات
+                    الجوازات من
                     خلال نظام مقيم حيث تتيح لك
                 </p>
             </header>
@@ -195,7 +156,6 @@
                 </div>
 
             </div> <!-- / row -->
-
 
 
         </div>
@@ -284,121 +244,10 @@
         </div>
 
     </section><!-- End Values Section -->
-
-
 </main><!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
 
-    <div class="footer-top">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-12 col-lg-6 col-md-4 footer-info">
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <img src="/assets/img/logo-transparent.png" alt="">
-                    </a>
-                    <p class="w-75">
-                        طريق الملك عبدالله بن عبدالعزيز الفرعي
-                        حي المرسلات مبنى رقم 4510 ،
-                        الرياض المملكة العربية السعودية
-                    </p>
-                    <div class="social-links mt-3">
-                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-3 col-md-4 footer-links">
-                    <h4>
-                        روابط تهمك
-                    </h4>
-                    <ul>
-                        <li><i class="bi bi-chevron-left"></i> <a href="#">الرئيسية</a></li>
-                        <li><i class="bi bi-chevron-left"></i> <a href="#pricing">اسعار الشرائح</a></li>
-                        <li><i class="bi bi-chevron-left"></i> <a href="#features">الخدمات</a></li>
-                        <li><i class="bi bi-chevron-left"></i> <a href="#values">المميزات</a></li>
-                    </ul>
-                </div>
-
-
-                <div class="col-12 col-lg-3 col-md-4 footer-contact">
-                    <h4>
-                        تواصل معنا
-                    </h4>
-                    <p>
-                        <strong>
-                            رقم الهاتف
-                        </strong>
-                        <br>
-                        <a href="tel:920026002">
-                            920026002
-                        </a>
-                        <br>
-                        <br>
-                        <strong>
-                            البريد الإلكتروني
-                        </strong>
-                        <br>
-                        <a href="mailto:info@intesharu.com">
-                            info@intesharu.com
-                        </a>
-                        <br>
-                    </p>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="copyright">
-            <strong>
-          <span>
-            <a href="">
-              انتشار
-            </a>
-          </span>
-                &copy;
-            </strong>
-            جميع الحقوق محفوظة
-            <!-- get current year -->
-            <script>
-                document.write(new Date().getFullYear());
-            </script>
-        </div>
-        <div class="credits">
-
-        </div>
-    </div>
-</footer><!-- End Footer -->
-
-
-<!-- Vendor JS Files -->
-<script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="/assets/vendor/aos/aos.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Main JS File -->
-<script src="/assets/js/main.js"></script>
-
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WJVHMN8');</script>
-
-
-@livewireScripts
-
-<script>
-    window.addEventListener('thanks-message', event => {
-        document.getElementById('thanks-message').classList.remove('d-none')
-    })
-</script>
+@include('home.layouts.footer')
+@include('home.layouts.scripts')
 </body>
-
 </html>

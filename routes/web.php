@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.main');
+Route::group(['prefix' => '/', 'as' => 'home.'], function (){
+    Route::get('/', [\App\Http\Controllers\Home\MainController::class, 'index'])->name('index');
+    Route::post('/send-email', [\App\Http\Controllers\Home\MainController::class, 'handelSendBusinessMail'])->name('handelSendBusinessMail');
+    Route::get('/thank-you', [\App\Http\Controllers\Home\MainController::class, 'thankYouIndex'])->name('thankYouIndex');
 });
-
