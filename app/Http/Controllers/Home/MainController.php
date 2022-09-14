@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\Home\SendBusinessMail;
+use App\Jobs\HandelSendBusinessMailJob;
 
 class MainController extends Controller
 {
@@ -32,10 +31,7 @@ class MainController extends Controller
             'target_segment' => 'required',
         ]);
 
-        Mail::to(config('app.mail_business_email'))
-            ->send(new SendBusinessMail($request->all()))
-        ;
-
+        dispatch(new HandelSendBusinessMailJob($request->all()));
         return redirect()->route('home.thankYouIndex');
 
     }
